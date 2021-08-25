@@ -1,14 +1,67 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Hello.gd" type="Script" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Match.gd" type="Script" id=1]
 
-[node name="Panel" type="Panel"]
-margin_right = 1024.0
-margin_bottom = 600.0
+[node name="Match" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Node" parent="." instance=ExtResource( 2 )]
+[node name="Background" type="Panel" parent="."]
+margin_left = -1.05945
+margin_top = -1.05946
+margin_right = 1022.94
+margin_bottom = 598.941
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.05945
+margin_top = -1.05946
+margin_right = 89.9406
+margin_bottom = -1.05946
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+margin_left = 492.0
+margin_top = 293.0
+margin_right = 623.0
+margin_bottom = 307.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighScore" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+margin_right = 127.0
+margin_bottom = 14.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/HighScore"]
+margin_right = 127.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/HighScore/HBoxContainer"]
+margin_right = 72.0
+margin_bottom = 14.0
+text = "HighScore: "
+
+[node name="Label2" type="Label" parent="CenterContainer/HBoxContainer/HighScore/HBoxContainer"]
+margin_left = 76.0
+margin_right = 127.0
+margin_bottom = 14.0
+text = "Player 1"
+
+[node name="Players" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+margin_left = 131.0
+margin_right = 131.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
