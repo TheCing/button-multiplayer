@@ -24,6 +24,10 @@ config/name="Godot Tutorial"
 run/main_scene="res://Lobby.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [gdnative]
 
 singletons=[ "res://git_api.gdnlib" ]
