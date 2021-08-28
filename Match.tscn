@@ -1,16 +1,18 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Match.gd" type="Script" id=1]
+[ext_resource path="res://Server.gd" type="Script" id=2]
 
-[node name="Match" type="Control"]
+[node name="Server" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Match" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="Match"]
 margin_left = -1.05945
 margin_top = -1.05946
 margin_right = 1022.94
@@ -19,7 +21,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="Match"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -1.05945
@@ -30,7 +32,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Match/CenterContainer"]
 margin_left = 492.0
 margin_top = 293.0
 margin_right = 623.0
@@ -39,26 +41,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HighScore" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+[node name="HighScore" type="VBoxContainer" parent="Match/CenterContainer/HBoxContainer"]
 margin_right = 127.0
 margin_bottom = 14.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/HighScore"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Match/CenterContainer/HBoxContainer/HighScore"]
 margin_right = 127.0
 margin_bottom = 14.0
 
-[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/HighScore/HBoxContainer"]
+[node name="Label" type="Label" parent="Match/CenterContainer/HBoxContainer/HighScore/HBoxContainer"]
 margin_right = 72.0
 margin_bottom = 14.0
 text = "HighScore: "
 
-[node name="Label2" type="Label" parent="CenterContainer/HBoxContainer/HighScore/HBoxContainer"]
+[node name="Label2" type="Label" parent="Match/CenterContainer/HBoxContainer/HighScore/HBoxContainer"]
 margin_left = 76.0
 margin_right = 127.0
 margin_bottom = 14.0
 text = "Player 1"
 
-[node name="Players" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+[node name="Players" type="VBoxContainer" parent="Match/CenterContainer/HBoxContainer"]
 margin_left = 131.0
 margin_right = 131.0
 margin_bottom = 14.0
